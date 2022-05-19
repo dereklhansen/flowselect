@@ -1,0 +1,7 @@
+# @package _group_
+model_name: "realnvp"
+max_epochs : 250
+lr : 1e-3
+gradient_clip_val: 0.5
+n_layers : 20
+n_hidden : 64

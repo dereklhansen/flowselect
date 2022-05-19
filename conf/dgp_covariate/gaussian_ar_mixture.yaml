@@ -1,0 +1,6 @@
+# @package _group_
+name : "gaussian_ar_mixture"
+k : 3
+rho_base: 0.98
+rho_decay: 0.3
+mu_shift: 20.0

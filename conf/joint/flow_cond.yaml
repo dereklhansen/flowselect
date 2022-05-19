@@ -1,0 +1,8 @@
+# @package _group_
+model_name : "flow_cond"
+max_epochs: 100
+lr: 1e-3
+gradient_clip_val: 5.0
+k: 6
+hidden_layers: [32, 16, 8, 4]
+min_h: 0.01

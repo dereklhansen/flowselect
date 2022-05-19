@@ -1,0 +1,6 @@
+# @package _group_
+model_name: "ddlk"
+max_epochs: 50
+hidden_layers: 3
+init_type: "default"
+early_stopping: True

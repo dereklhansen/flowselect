@@ -1,0 +1,3 @@
+# @package _group_
+name : "gaussian_ar"
+rho: 0.9

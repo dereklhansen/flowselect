@@ -1,0 +1,6 @@
+# @package _group_
+model_name : "realnvp"
+n_layers : 30
+n_hidden: 64
+max_epochs: 100
+lr: 1e-3

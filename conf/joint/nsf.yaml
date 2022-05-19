@@ -1,0 +1,8 @@
+# @package _group_
+model_name : "nsf"
+n_layers : 30
+max_epochs: 100
+lr: 1e-3
+gradient_clip_val: 5.0
+hidden_features: 8
+tail_bound: 3.0

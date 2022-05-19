@@ -1,0 +1,16 @@
+*.pyc
+lightning_logs
+*.aux
+*.log
+*.out
+*.gz
+*.tks
+*.bbl
+*.blg
+*.tdo
+*.idea
+*.Rhistory
+*.fdb_latexmk
+*.fls
+hydra
+output

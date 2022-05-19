@@ -1,0 +1,7 @@
+# @package _group_
+model_name : "gan"
+x_name : "Normal"
+lamda : 0.01
+mu : 1
+mb_size : 128
+niter : 2000

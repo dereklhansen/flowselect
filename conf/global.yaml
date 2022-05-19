@@ -1,0 +1,94 @@
+# @package _global_
+# A blank field shows up as None in Python
+gpu:
+seed: 42
+torch_threads: 8
+output: ../output/run_flowselect
+defaults:
+  - data: dgp
+  - dgp_covariate: gaussian_ar_mixture
+  - dgp_response: linear
+  - joint: gaussflow
+  - knockoff: ddlk
+  - variable_selection: rf
+
+hydra:
+  run:
+    dir: ./hydra/outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ./hydra/multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}_${data.label}_${joint.model_name}_${knockoff.model_name}_${variable_selection.method_name}
+data:
+  data_id: # Overwritten by application
+  train_size: 0.7
+  test_size: 0.15
+  run_id: 0
+
+dgp_covariate:
+  d: 10
+  n_obs: 2000
+
+dgp_response:
+  signal_n : 2
+  signal_a : 100.0
+
+joint:
+  joint_id:
+  load_state_location:
+  save_state_location: joint_state.pt
+  logdir: "logs_joint"
+  gpu: ${gpu}
+  max_epochs: ???
+  num_sanity_val_steps: 1
+  weights_summary:
+  deterministic: true
+  batch_size_train: 256
+  batch_size_valid: 1000
+  plot_nobs: 1000
+
+varsel_method: "knockoff"
+
+knockoff:
+  knockoff_id:
+  load_state_location:
+  save_state_location: knockoff_state.pt
+  logdir: "logs_knockoff"
+  gpu: ${gpu}
+  max_epochs: ???
+  num_sanity_val_steps: 1
+  weights_summary:
+  deterministic: true
+  batch_size_train: 64
+  batch_size_valid: 1000
+  batch_size_test: 1000
+  drop_last: False
+
+variable_selection:
+  variable_selection_id:
+  load_knockoff_sample_location:
+  save_knockoff_sample_location: knockoff_sample.pt
+  knockoff_sample_gpu: ${gpu}
+  train_n_obs: 1000
+  test_n_obs: 100
+
+crt:
+  model_name : "mcmc"
+  varsel_model_name: "ridge"
+  n_jobs : 4
+  mcmc_steps : 10
+  device : "cpu"
+  batch_size : 64
+  n_obs : 2000
+  feature_statistic : "ridge"
+  one_hot: []
+
+hrt:
+  feature_statistic: "fast_lasso"
+  nbootstraps: 100
+  nperms: 1000
+  nepochs: 50
+  n_obs: 2000
+  n_jobs: 4
+
+fastnn:
+  batch_size: 500

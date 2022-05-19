@@ -1,0 +1,7 @@
+
+#@package _group_
+type: realdata
+label: soybean
+path: ./data/soybeans/
+trait: oil
+n_snps: All

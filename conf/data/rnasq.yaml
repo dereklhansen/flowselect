@@ -1,0 +1,8 @@
+#@package _group_
+type: realdata
+label: rnasq
+location: "./data/brainlarge_normalized.npy"
+n_threshold: 100_000
+n_vars: 100
+noise: 0.3
+n_vars_corr: 5

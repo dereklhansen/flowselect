@@ -1,0 +1,12 @@
+# @package _group_
+model_name : "deepknockoff"
+epochs : 10
+epoch_length : 50
+second_order_method: asdp
+device: 6
+train_obs: 10000
+# x_name : "Normal"
+# lamda : 0.01
+# mu : 1
+# mb_size : 128
+# niter : 2000

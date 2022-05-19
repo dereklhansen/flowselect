@@ -1,0 +1,11 @@
+# @package _group_
+model_name: "gaussnvp"
+max_epochs : 150
+gf_k : 6
+n_layers : 20
+n_hidden : 8
+lr : 1e-3
+train_marg_separate: True
+marg_max_epochs: 350
+marg_freeze: False
+marg_lr : 1e-3

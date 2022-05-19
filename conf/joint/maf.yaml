@@ -1,0 +1,7 @@
+# @package _group_
+model_name : "maf"
+n_layers : 5
+max_epochs: 100
+lr: 1e-3
+gradient_clip_val: 5.0
+hidden_features: 50

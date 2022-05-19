@@ -1,0 +1,8 @@
+# @package _group_
+model_name: "ddlk"
+max_epochs : 250
+lr : 1e-3
+gradient_clip_val: 0.5
+hidden_layers: 3
+init_type: "residual"
+early_stopping: True

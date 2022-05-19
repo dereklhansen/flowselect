@@ -1,0 +1,10 @@
+# @package _group_
+model_name: "gaussflow"
+max_epochs : 100
+k : 50
+n_iter : 30
+n_layers : 30
+lr : 1e-3
+train_marg_separate: True
+marg_max_epochs: 350
+marg_lr : 1e-3
